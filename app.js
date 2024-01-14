@@ -2,13 +2,13 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var bodyparser = require('body-parser')
 var logger = require('morgan');
 var mongoose = require('mongoose') 
 mongoose.connect('mongodb://localhost/jar')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var banksRouter = require('./routes/banks'); 
 
 var app = express();
 
@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/banks', banksRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
