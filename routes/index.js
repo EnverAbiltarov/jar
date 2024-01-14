@@ -1,24 +1,33 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+
+  /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express' });
 });
 
-/* Страница Bottle */
+/* Страница с бутылкой. */
 router.get('/bottle', function(req, res, next) {
-  res.send('<h1>Bottle<h1>');
-});
+  res.render('bank',{
+    title:"Бутылка",
+    picture:"images/bottle.jpg",
+    desc:"Бутылка — ёмкость для долговременного хранения жидкостей, высокий сосуд преимущественно цилиндрической формы и с узким горлом."
+  })
+})
 
-/* Страница Can */
 router.get('/can', function(req, res, next) {
-  res.send('<h1>can<h1>');
+  res.render('bank',{
+    title:"Жестяная банка",
+    picture:"images/can.jpg",
+    desc:"Жестяная упаковка - одна из самых распространенных форм расфасовки. Это рекомендуемый метод упаковки многих пищевых продуктов, таких как безалкогольные напитки, супы или специи."})
 });
 
-/* Страница Decanter */
 router.get('/decanter', function(req, res, next) {
-  res.send('<h1>decnter<h1>');
+  res.render('bank',{
+    title:"Графин",
+    picture:"images/decanter.jpg",
+    desc:"Графин — широкий книзу стеклянный или хрустальный прозрачный сосуд с длинным узким горлом, закрывающимся незакреплённой пробкой."})
 });
 
 module.exports = router;
