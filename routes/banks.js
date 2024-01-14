@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Bank = require("../models/bank").Bank;
 
-/* GET users listing. */
-router.get('/', (req, res, next) => {
-  res.send('Новый маршрутизатор, для маршрутов, начинающихся с banks');
-});
+// /* GET users listing. */
+//router.get('/', (req, res, next) => {
+//  res.send('Новый маршрутизатор, для маршрутов, начинающихся с banks');
+//});
 
 
 /* Страница героев */
