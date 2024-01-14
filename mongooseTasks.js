@@ -9,6 +9,7 @@ var bank = new Bank({
       nick: "bottle"
 })
 
-bank.save().then(() => {
+console.log(bank)
+bank.save().then(function(err, cup, affected){
       console.log(bank.title)
 })
