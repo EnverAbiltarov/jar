@@ -1,13 +1,14 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/test');
+var mongoose = require('mongoose') 
+mongoose.connect('mongodb://localhost/test') 
+var Bank = require("./models/bank").Bank
 
+var schema = mongoose.Schema({name: String})
 
-const Bank = mongoose.model('bank', { name: String });
+var bank = new Bank({
+      title: "Бутылка",
+      nick: "bottle"
+})
 
-
-
-const bank = new Bank({ name: 'Фляжка' });
-bank.save().then(() => console.log('из титана'));
-
-
-
+bank.save().then(() => {
+      console.log(bank.title)
+})
