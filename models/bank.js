@@ -1,6 +1,8 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 var bankSchema = new Schema({
+
+
       title: String,
       nick: {
       type: String,
@@ -14,6 +16,5 @@ var bankSchema = new Schema({
       default: Date.now
       }
 })
-
 
 module.exports.Bank = mongoose.model("Bank", bankSchema)

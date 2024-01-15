@@ -19,6 +19,8 @@ var async = require("async")
         throw new Error("Нет такого");
       }
       
+
+      
       renderCup(res, bank.title, bank.avatar, bank.desc, banks);
     } catch (err) {
       next(err);
