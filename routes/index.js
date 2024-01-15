@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
+const Bank = require("../models/bank").Bank
 
 
-  /* GET home page. */
-router.get('/', function(req, res, next) {
+/*router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
-});
+});*/
 
-/* Страница с бутылкой. */
+
 router.get('/bottle', function(req, res, next) {
   res.render('bank',{
     title:"Бутылка",
@@ -29,28 +29,25 @@ router.get('/decanter', function(req, res, next) {
     picture:"images/decanter.jpg",
     desc:"Графин — широкий книзу стеклянный или хрустальный прозрачный сосуд с длинным узким горлом, закрывающимся незакреплённой пробкой."})
 });
-const Bank = require("../models/bank").Cup
 
 
 // router.get('/', function(req, res, next) {
 //     res.render('index', { title: 'Jar' });
-//   });
+//   });   
 
-router.get('/', function(req, res, next) {
+/*router.get('/', function(req, res, next) {
   res.cookie('greeting', 'Hi!!!').render('index', { 
    title: 'Express',
-   menu:menu 
+   menu:menu  
    }); 
  });
-
-/* GET home page. */
-router.get('/', async (req, res, next) => {
+*/
+ /* GET home page. */
+ router.get('/', async (req, res, next) => {
   try {
     const menu = await Bank.find({}, { _id: 0, title: 1, nick: 1 });
-    res.render('index', {
-      title: 'Bank',
-      menu: menu
-    });
+    req.session.greeting = "Hi!!!"
+    res.render('index', { title:'Express', menu: menu, counter:req.session.counter});
   } catch (err) {
     next(err);
   }

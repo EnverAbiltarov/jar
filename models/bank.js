@@ -10,8 +10,10 @@ var bankSchema = new Schema({
       avatar: String,
       desc: String,
       created:{
-      type:Date,
-      default:Date.now
+      type: Date,
+      default: Date.now
       }
 })
+
+
 module.exports.Bank = mongoose.model("Bank", bankSchema)

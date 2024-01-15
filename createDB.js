@@ -7,8 +7,8 @@ async function run() {
         await client.connect();
         var database = client.db("jar"); database.dropDatabase()
         database = client.db("jar");
-        const bank = database.collection("bank");
-        const result = await bank.insertMany(data); 
+        const banks = database.collection("banks");
+        const result = await banks.insertMany(data); 
         console.log(`${result} documents were inserted`);
     } 
     finally {
