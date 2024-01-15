@@ -23,8 +23,7 @@
     </ul>
     <ul class="navbar-nav navbar-right">
      <li>
-          <a class="nav-link" href="">Войти</a>
-
+          
           <% if(typeof nav == 'object' && nav){ nav.forEach(function(cups){
             %>
             <li class="nav-item">
@@ -32,8 +31,11 @@
             href="/cups/<%=cups.nick%>"><%=cups.title%></a>
             </li>
             <% })} %>
-            
+
 </li> </ul>
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="/logreg">Войти</a></li>
+    </ul>
      </div>
 </nav>
   </head>

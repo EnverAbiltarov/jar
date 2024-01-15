@@ -2,6 +2,12 @@ var express = require('express');
 var router = express.Router();
 const Bank = require("../models/bank").Bank
 
+/* GET login/registration page. */
+router.get('/logreg', function(req, res, next) {
+  res.render('logreg',{title: 'Вход'});
+});
+
+
 
 /*router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
