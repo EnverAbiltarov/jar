@@ -12,9 +12,7 @@ var async = require("async")
 /* Страница героев */
   router.get('/:nick', async function(req, res, next) {
     try {
-      const [bank, banks] = await Promise.all([
-        Bank.findOne({ nick: req.params.nick }),
-        Bank.find({}, { _id: 0, title: 1, nick: 1 })
+        const [bank, banks] = await Promise.all([Bank.findOne({ nick: req.params.nick }), Bank.find({}, { _id: 0, title: 1, nick: 1 })
       ]);
     
       if (!bank) {
