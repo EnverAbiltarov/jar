@@ -24,11 +24,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({
-  secret: "jar", 
-  cookie:{maxAge:60*1000},
+app.use(session({ secret: "Jar", 
+  cookie: {maxAge: 60*1000},
   resave: true, 
   saveUninitialized: true,
+  secure: true
 }))
 
 app.use('/', indexRouter);

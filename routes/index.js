@@ -36,6 +36,12 @@ const Bank = require("../models/bank").Cup
 //     res.render('index', { title: 'Jar' });
 //   });
 
+router.get('/', function(req, res, next) {
+  res.cookie('greeting', 'Hi!!!').render('index', { 
+   title: 'Express',
+   menu:menu 
+   }); 
+ });
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
