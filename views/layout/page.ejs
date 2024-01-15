@@ -24,6 +24,15 @@
     <ul class="navbar-nav navbar-right">
      <li>
           <a class="nav-link" href="">Войти</a>
+
+          <% if(typeof nav == 'object' && nav){ nav.forEach(function(cups){
+            %>
+            <li class="nav-item">
+            <a class="nav-link"
+            href="/cups/<%=cups.nick%>"><%=cups.title%></a>
+            </li>
+            <% })} %>
+            
 </li> </ul>
      </div>
 </nav>
