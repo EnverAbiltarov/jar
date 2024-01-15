@@ -24,11 +24,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({ secret: "Jar", 
+var MongoStore = require('connect-mongo');
+
+app.use(session({ secret: "jar", 
   cookie: {maxAge: 60*1000},
   resave: true, 
   saveUninitialized: true,
-  secure: true
+  secure: true,
+  store: MongoStore.create({mongoUrl: 'mongodb://localhost/jar'})
 }))
 
 app.use('/', indexRouter);
